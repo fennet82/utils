@@ -1,0 +1,16 @@
+theme:default
+color_scheme:default_default
+show_time:true
+show_user_at_machine:true
+show_full_path:true
+show_rich_notification:true
+double_line:false
+time_format:%H:%M:%S
+separator:
+ps2:➜
+user_name:
+host_name:
+bold_prompt:false
+show_host_prompt:false
+show_user_symbol_prompt:false
+fresh_file

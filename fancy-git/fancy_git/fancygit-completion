@@ -1,0 +1,71 @@
+_fancygit() {
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts='-h \
+        --help \
+        -v \
+        --version \
+        --update \
+        --fonts-install \
+        --changelog-show \
+        --suggested-global-git-config \
+        --suggested-global-git-config-apply \
+        --show-color-schemes \
+        --show-color-schemes-all \
+        --show-themes \
+        --enable-full-path \
+        --disable-full-path \
+        --enable-show-user-at-machine \
+        --disable-show-user-at-machine \
+        --enable-time \
+        --disable-time \
+        --enable-double-line \
+        --disable-double-line \
+        --enable-rich-notification \
+        --disable-rich-notification \
+        --enable-bold-prompt \
+        --disable-bold-prompt \
+        --enable-host-name \
+        --disable-host-name \
+        --enable-user-symbol \
+        --disable-user-symbol \
+        --enable-git-clear \
+        --disable-git-clear \
+        --set-user-name \
+        --unset-user-name \
+        --set-host-name \
+        --unset-host-name \
+        --config-list \
+        --separator-default \
+        --separator-blocks \
+        --separator-blocks-tiny \
+        --separator-fire \
+        --separator-lego \
+        --separator-curve \
+        --separator-paint \
+        --theme-default \
+        --theme-human \
+        --theme-simple \
+        --color-scheme-simple \
+        --color-scheme-human \
+        --color-scheme-human-dracula \
+        --color-scheme-default \
+        --color-scheme-dracula \
+        --color-scheme-batman \
+        --color-scheme-robin \
+        --color-scheme-light \
+        --color-scheme-neon \
+        --color-scheme-cga \
+        --color-scheme-superman \
+        --reset
+    '
+
+    if [[ ${cur} == * ]] ; then
+        COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+        return 0
+    fi
+}
+
+complete -F _fancygit fancygit
